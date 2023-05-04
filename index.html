@@ -1,347 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment Of Bano Qabil</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 
+
+<head>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/37a0cb410d.js" crossorigin="anonymous"></script>
+    <script>
+        function ageCalculator() {
+            var userinput = document.getElementById("DOB").value;
+            var dob = new Date(userinput);
+            if (userinput == null || userinput == '') {
+                document.getElementById("message").innerHTML =  " **Choose a date please!";
+                return false;
+            } else {
+
+                //calculate month difference from current date in time  
+                var month_diff = Date.now() - dob.getTime();
+
+                //convert the calculated difference in date format  
+                var age_dt = new Date(month_diff);
+
+                //extract year from date      
+                var year = age_dt.getFullYear();
+
+                var month =  age_dt.getMonth();
+
+                var day = age_dt.getDay();
+
+                //now calculate the age of the user  
+                var age = Math.abs(year - 1970);
+                
+             
+
+                //display the calculated age  
+                return document.getElementById("result").innerHTML =
+                    "Age is: " + age + " years. " + month + " months " + day + " days ";
+            }
+        }  
+
+    </script>
 </head>
 
 <body>
-    <div class="container">
+    <center class="box" >
+        <h2 style="color: 32A80F" align="center"> AGE CALCULATER . <br> <br> </h2>
 
-        <div class="nav">
-            <img src="data:image/webp;base64,UklGRloBAABXRUJQVlA4TE0BAAAvx8AOEH8gEEjyx1tqhQkb2olI6DiAXNvWs+SRM/xzYglUYCSOsAPpAB06wg6kA+hAO0gN/CWYCsg5ncH3vd/0pq4V0f8JkP8frxIRLiu+VtEclrTWp7I7clbQC3KNt/B3TmPKMcrZ3B5qvuBdeyRmz6FvgfZOxh5ynhetDSWD9pwttBmMRCTodDov0Ol0Ek5G/jJAWkQeI5zDXPxPIK4JE5ENIjwCcYOuEnIZ5QPIGMRS+zPCCkDJotMTIsycTXOu8F4pN87+NwDTvzR98ewoT/AMcXMWTritfBDeQtac4B2obfk2YHoEZXPkGMKYsoDmGCb2BO/URLmFfACHX8vIX3bkOIxpT5CWV4jbE1RF++AqJo+Qs8f1jVEblh1oE8tutfBLw06nk7TiWSPxFbdixWeEnF1jmIuInEHTriPYdGYwteseys4KnFry7yMA"
-                alt="" class="MATE ">
+        <!-- Choose a date and enter in input field -->
+        <b> Enter Date of Birth: <input type=date id=DOB> </b>
+        <span id="message" style="color:red"> </span> <br><br>
 
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">Services</a></li>
-
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Prices</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contacts</a></li>
-                <li><a href="#">Team</a></li>
-            </ul>
-        </div>
-        <div class="mid">
-            <h1>Mate - Free Parallax Website Template</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <div> <button type="button " class="button"> <span></span> Download</button> </div>
-
-        </div>
-    </div>
-    <Section id="Services">
-        <div class="Title-text">
-            <h2>OUR SERVICES</h2>
-            <hr class="lines">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br>
-                Lorem ipsum dolor sit amet, consectetur.</p>
-        </div>
-        <div class="Service-Box">
-            <div class="box1">
-                <i class="fa-solid fa-pencil"></i>
-                <h3>Content Writing</h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
-                </p>
-
-            </div>
-            <div class="box1">
-                <i class="fa-solid fa-code"></i>
-                <h3>Web Development</h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
-                </p>
-
-            </div>
-            <div class="box1">
-                <i class="fa-solid fa-face-smile"></i>
-                <h3>Business Consultancy</h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
-                </p>
-
-            </div>
-        </div>
-    </Section>
-
-    <div class="features">
-
-        <div class="Title-text2">
-            <h2>SOME FEATURES</h2>
-            <hr class="lines">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br>
-                Lorem ipsum dolor sit amet, consectetur.</p>
-        </div>
-
-        <div class="box-container">
-            <div class="column">
-                <div class="boxes">
-                    <i class="fa-regular fa-rocket-launch"></i>
-                    <h3>Fully Responsive</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos!
-                        Lorem ipsum dolor sit amet, consectetur.</p>
-                </div>
-                <div class="boxes">
-                    <i class="fa-regular fa-rocket-launch"></i>
-                    <h3>Fully Responsive</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos!
-                        Lorem ipsum dolor sit amet, consectetur.</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="boxes">
-                    <i class="fa-regular fa-rocket-launch"></i>
-                    <h3>Fully Responsive</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos!
-                        Lorem ipsum dolor sit amet, consectetur.</p>
-                </div>
-                <div class="boxes">
-                    <i class="fa-regular fa-rocket-launch"></i>
-                    <h3>Fully Responsive</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos!
-                        Lorem ipsum dolor sit amet, consectetur.</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="man"> <img
-                        src="https://preview.uideck.com/items/mate/img/features/xfeature.png.pagespeed.ic.bSWdsG_W4i.webp"
-                        alt=""> </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <Section id="Services">
-        <div class="Title-text">
-            <h2>PRICING TABLE</h2>
-            <hr class="lines">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br>
-                Lorem ipsum dolor sit amet, consectetur.</p>
-        </div>
-        <div class="price-container">
-            <div class="price-table">
-
-                <h2>Free</h2>
-                <h4>$00</h4>
-                <ul>
-                    <li>Consectetur adipiscing</li>
-
-                    <li>Nunc luctus nulla et tellus</li>
-
-                    <li>Suspendisse quis metus</li>
-
-                    <li>Vestibul varius fermentum erat</li>
-
-                </ul>
-                <a href="#" class="btn"> <span></span> GET PLAN</a>
-            </div>
-            <div class="price-table">
-                <h2>Popular</h2>
-                <h4>$3.50</h4>
-                <ul>
-                    <li>Consectetur adipiscing</li>
-
-                    <li>Nunc luctus nulla et tellus</li>
-
-                    <li>Suspendisse quis metus</li>
-
-                    <li>Vestibul varius fermentum erat</li>
-
-                </ul>
-                <a href="#" class="btn"> <span></span> BUY NOW</a>
-            </div>
-            <div class="price-table">
-                <h2>Premium</h2>
-                <h4>$10.00</h4>
-                <ul>
-                    <li>Consectetur adipiscing</li>
-
-                    <li>Nunc luctus nulla et tellus</li>
-
-                    <li>Suspendisse quis metus</li>
-
-                    <li>Vestibul varius fermentum erat</li>
-
-                </ul>
-                <a href="#" class="btn"> <span></span> BUY NOW</a>
-
-
-            </div>
-        </div>
-
-
-
-    </Section>
-
-    <div class="team-container">
-
-        <div class="Title-text3">
-            <h2>OUR TEAM</h2>
-            <hr class="lines">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br>
-                Lorem ipsum dolor sit amet, consectetur.</p>
-        </div>
-        <div class="small-container">
-            <div class="workers">
-                <img src="https://preview.uideck.com/items/mate/img/team/xteam1.jpg.pagespeed.ic.-cMzflxBiD.webp"
-                    alt="">
-                <div class="qualification">
-                    <h2>John Doe</h2>
-                    <p>Chef technical Officer</p>
-                    <ul>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="workers">
-                <img src="https://preview.uideck.com/items/mate/img/team/xteam2.jpg.pagespeed.ic.yLwkEJd6xI.webp"
-                    alt="">
-                <div class="qualification">
-                    <h2>Paul Kowalsy</h2>
-                    <p>CEO & Co-Founder</p>
-                    <ul>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="workers">
-                <img src="https://preview.uideck.com/items/mate/img/team/xteam3.jpg.pagespeed.ic.FPk7vvJsE0.webp"
-                    alt="">
-                <div class="qualification">
-                    <h2>Emily Williams</h2>
-                    <p>Business manager</p>
-                    <ul>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="workers">
-                <img src="https://preview.uideck.com/items/mate/img/team/xteam4.jpg.pagespeed.ic.98065Mp7BP.webp"
-                    alt="">
-                <div class="qualification">
-                    <h2>Patricia Green</h2>
-                    <p>Graphic Designer</p>
-                    <ul>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-    <div class="Contact">
-        <div class="Contact-text">
-            <h2>Contact With Us</h2>
-            <br>
-            <p>Centerville Road, DE 19808, US</p>
-            <p class="Phone">Phone</p>
-            <p class="number">(+94 123 456 789)</p>
-            <br>
-            <p class="Email">Email</p>
-            <p class="my-email">(Try@gmail.com)</p>
-            <div class="qualification">
-                <ul>
-                    <li>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa-brands fa-dribbble"></i></a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-        <div>
-            <input type="text" class="text-box " placeholder="Type Your Name">
-            <input type="text" placeholder="Enter Your Email" class="Email2">
-            <textarea name="comment" id="1" cols="30" rows="10" placeholder="Enter your Comments"
-                class="comment12"></textarea>
-            <br>
-            <button class="end-btn">SEND REPLY</button>
-
-        </div>
-
-
-
-
-    </div>
-
-
-
-    <script>
-
-        let num1 = prompt("Enter The First Number:");
-        let num2 = prompt("Enter The Second Number:");
-
-        num1 = Number(num1);
-        num2 = Number(num2);
-
-        let result = num1 * num2;
-
-        alert("The result is: " + result);
-
-
-    </script>
+        <!-- Choose a date and enter in input field -->
+        <button type="submit" onclick="ageCalculator()" id="btn" > Calculate age </button> <br><br>
+        <h3 style="color:32A80F" id="result" align="center"></h3>
+    </center>
 </body>
 
-</html>
+</html
